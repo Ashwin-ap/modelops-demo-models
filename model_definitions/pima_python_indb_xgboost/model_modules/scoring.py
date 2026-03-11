@@ -57,14 +57,20 @@ def score(context: ModelContext, **kwargs):
 
 
     # store the predictions
+    # predictions_df = predictions.result
+    # predictions_pdf = predictions_df.assign(drop_columns=True,
+    #                                          job_id=translate(context.job_id),
+    #                                          PatientId=predictions_df.PatientId,
+    #                                          HasDiabetes=predictions_df.Prediction.cast(type_=INTEGER),
+    #                                          json_report=translate("  "))
+
+    # store the predictions
     predictions_df = predictions.result
     predictions_pdf = predictions_df.assign(drop_columns=True,
-                                             job_id=translate(context.job_id),
                                              PatientId=predictions_df.PatientId,
                                              HasDiabetes=predictions_df.Prediction.cast(type_=INTEGER),
+                                             job_id=translate(context.job_id),
                                              json_report=translate("  "))
-
-
 
     print("Finished Scoring")
 
