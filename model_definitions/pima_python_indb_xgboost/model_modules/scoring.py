@@ -64,7 +64,7 @@ def score(context: ModelContext, **kwargs):
     #                                          HasDiabetes=predictions_df.Prediction.cast(type_=INTEGER),
     #                                          json_report=translate("  "))
 
-    # store the predictions
+    ## store the predictions
     predictions_df = predictions.result
     predictions_pdf = predictions_df.assign(drop_columns=True,
                                              PatientId=predictions_df.PatientId,
