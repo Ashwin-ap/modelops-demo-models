@@ -1,0 +1,6 @@
+xgboost==0.90
+scikit-learn==1.3.2
+teradataml
+nyoka==4.3.0
+teradatamodelops
+matplotlib==3.8.2
